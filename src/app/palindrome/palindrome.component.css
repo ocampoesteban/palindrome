@@ -1,0 +1,18 @@
+.row {
+    justify-content: center;
+}
+
+/* Bttn disabled and cursor not allowed */
+.card .input-group-append button:disabled {
+    cursor: not-allowed;
+}
+
+/*Aler*/
+.alert {
+     /* Animations */
+     -webkit-animation: fadein 1.5s; 
+     -moz-animation: fadein 1.5s;
+     -ms-animation: fadein 1.5s;
+     -o-animation: fadein 1.5s;
+     animation: fadein 1.5s;
+}

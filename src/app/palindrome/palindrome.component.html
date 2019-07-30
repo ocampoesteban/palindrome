@@ -1,0 +1,39 @@
+<!-- Boostrap -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-8 col-xl-8">
+
+            <!-- Card -->
+            <div class="card mt-4">
+                <div class="card-header">
+                    Palindrome
+                </div>
+                <div class="card-body text-left">
+                    <h5 class="card-title">What's a palindrome?</h5>
+                    <p class="card-text">A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar or the number 10801.</p>
+                    <p class="card-text">The main purposose of this excerice's find the largest palindrome in a given string. </p>
+                    <p class="card-text"><strong>i.e: </strong> string 'bmb 444414444 4949 stats' should return the string '444414444'.</p>
+                    
+                    <div class="input-group mb-3">
+                        <!-- Two way binding -->
+                        <input type="text" class="form-control" [(ngModel)]="inputValue" name="inputValue" placeholder="Add a value" aria-label="Add a value" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <!-- Event Binding -->
+                            <button (click)="largestPalindrome(inputValue)" class="btn btn-outline-secondary" type="button" id="button-addon2" [disabled]="!inputValue">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alert -->
+            <div class="alert alert-primary mt-4 alert-dismissible fade show" role="alert" *ngIf="isMessagesDisplayed">
+                <!-- Interpolation -->
+                Longest palindromic substring's <strong>'{{longestPalidrome}}'</strong>
+                
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="cleanWindow()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
