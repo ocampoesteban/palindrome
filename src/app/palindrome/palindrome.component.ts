@@ -21,13 +21,13 @@ export class PalindromeComponent implements OnInit {
    * @param a , b
    * @returns boolean
    */
-  isPalindrome(a , b): boolean {
+  isPalindrome(a: string , b: string): boolean {
     return a === b;
   }
 
   /**
    * Return the largest palindrome name
-   * @param
+   * @param s
    * @returns string
    */
   largestPalindrome(s): string {
@@ -41,42 +41,43 @@ export class PalindromeComponent implements OnInit {
       return this.longestPalidrome;
     }
 
-     let longest = s.substring(0, 1);
+     let largestPalindromeAux = s.substring(0, 1); // Init var with first letter of the string
 
      for (let i = 0; i < s.length; i++) {
-      let temp = this.expand(s, i, i);
-      if (temp.length > longest.length) {
-        longest = temp;
+      let substringExpanded = this.expandSearch(s, i, i); // Search a palindrome substring with a single letter in the center
+
+      if (substringExpanded.length > largestPalindromeAux.length) {
+        largestPalindromeAux = substringExpanded;
       }
-      temp = this.expand(s, i, i + 1);
-      if (temp.length > longest.length) {
-        longest = temp;
+
+      substringExpanded = this.expandSearch(s, i, i + 1); // Search a palindrome substring with 2 equal letters in the center
+      if (substringExpanded.length > largestPalindromeAux.length) {
+        largestPalindromeAux = substringExpanded;
       }
     }
 
      this.isMessagesDisplayed = true;
-     this.longestPalidrome = longest;
+     this.longestPalidrome = largestPalindromeAux;
      return this.longestPalidrome;
   }
 
-  /**
-   * Return
-   * @param
+  /** Return the largest palindrome substring starting from init & end
+   * @param stringAux, init , end
    * @returns string
    */
-  expand(s, begin, end): string {
-    while (begin >= 0 && end <= s.length - 1 && this.isPalindrome( s[begin] , s[end])) {
-      begin--;
+  expandSearch(stringAux: string, init: number, end: number): string {
+    while (init >= 0 && end <= stringAux.length - 1 && this.isPalindrome( stringAux[init] , stringAux[end])) {
+      init--;
       end++;
     }
 
-    return s.substring(begin + 1, end);
+    return stringAux.substring(init + 1, end);
   }
 
   /**
    * Clean vars and hide alert
    * @param
-   * @returns number
+   * @returns
    */
   cleanWindow(): void {
     this.isMessagesDisplayed = false;
