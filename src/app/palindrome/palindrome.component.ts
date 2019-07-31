@@ -17,7 +17,7 @@ export class PalindromeComponent implements OnInit {
   }
 
   /**
-   * Return true whether both string are equal
+   * Return true whether both strings are equal
    * @param a , b
    * @returns boolean
    */
@@ -26,11 +26,11 @@ export class PalindromeComponent implements OnInit {
   }
 
   /**
-   * Return the largest palindrome name
+   * Return the largest palindrome
    * @param s
    * @returns string
    */
-  largestPalindrome(s): string {
+  largestPalindrome(s: string): string {
 
      if (s.trim() === '') {  // Return whether the string has only white spaces
       this.isMessagesDisplayed = false;
@@ -41,16 +41,16 @@ export class PalindromeComponent implements OnInit {
       return this.longestPalidrome;
     }
 
-     let largestPalindromeAux = s.substring(0, 1); // Init var with first letter of the string
+     let largestPalindromeAux = s.substring(0, 1); // Initialize var with the first letter of the string
 
      for (let i = 0; i < s.length; i++) {
-      let substringExpanded = this.expandSearch(s, i, i); // Search a palindrome substring with a single letter in the center
+      let substringExpanded = this.expandSearch(s, i, i); // Palindrome with 1 character in the center of s
 
       if (substringExpanded.length > largestPalindromeAux.length) {
         largestPalindromeAux = substringExpanded;
       }
 
-      substringExpanded = this.expandSearch(s, i, i + 1); // Search a palindrome substring with 2 equal letters in the center
+      substringExpanded = this.expandSearch(s, i, i + 1); // Palindrome with two characters in the center of s
       if (substringExpanded.length > largestPalindromeAux.length) {
         largestPalindromeAux = substringExpanded;
       }
