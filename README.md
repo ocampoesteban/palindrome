@@ -19,9 +19,6 @@ Unit test: optional
 ## Action triggered
 ![action-triggered](https://user-images.githubusercontent.com/30473808/62175869-8e9f4b00-b315-11e9-8816-536b53e61e7a.PNG)
 
-## Reference
-https://en.wikipedia.org/wiki/Palindrome
-
 
 
 ## Sossa Ocampo Esteban
