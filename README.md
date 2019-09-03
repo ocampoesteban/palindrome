@@ -2,8 +2,7 @@
 
 Exercise that I did for an interview.
 
-Palindrome:
-	• Find the largest palindrome in a given string. (https://en.wikipedia.org/wiki/Palindrome)
+Palindrome: Find the largest palindrome in a given string. (https://en.wikipedia.org/wiki/Palindrome)
 
 Examples:
 
